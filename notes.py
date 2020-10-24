@@ -68,3 +68,49 @@ my_string = "Bueller"
 repeated = my_string * 3
 print(repeated) # BuellerBuellerBueller
 
+# Formatted Strings
+#use %s for strings, %d for ints, %f for floats, & %x for ints in hexadecimal
+name = "Austen"
+year = 2020
+print("Hey %s! It's the year %d." % (name, year))
+# Hey Austen! It's the year 2020.
+
+# String Operations
+
+#len() prints out the number of characters in a string
+my_second_string = "Neeee"
+print(len(my_second_string)) #5
+
+#index prints out the index of the substring argument's first occurence
+my_string = "Hello, world!"
+print(my_string.index("o"))   # 4
+print(my_string.index(", w")) # 5
+
+#count returns the number of occurrences of the substring argument
+my_string = "Hello, world!"
+print(my_string.count("o"))  # 2
+print(my_string.count("ll")) # 1
+
+# Slicing a string ([start:stop:step])
+my_string = "Hello, world!"
+print(my_string[3:7])   # lo,
+print(my_string[3:7:2]) # l,
+
+# Reverse a string's order
+print(my_string[::-1])  #!dlrow ,olleH
+
+#Convert a string to Uppercase or Lowercase
+my_string = "Darkness"
+my_string.upper()
+my_string.lower()
+
+#Determine if a string starts with or ends with a specific sequence
+my_string = "Hello, world!"
+print(my_string.startswith("Hello")) # True
+print(my_string.endswith("globe!"))  # False
+
+#Splitting a string into a list
+my_string = "Hello, world!"
+print(my_string.split())    # ['Hello,', 'world!']
+print(my_string.split(",")) # ['Hello', ' world!']
+print(my_string.split("l")) # ['He', '', 'o, wor', 'd!']
