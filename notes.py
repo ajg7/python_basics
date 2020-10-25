@@ -114,3 +114,145 @@ my_string = "Hello, world!"
 print(my_string.split())    # ['Hello,', 'world!']
 print(my_string.split(",")) # ['Hello', ' world!']
 print(my_string.split("l")) # ['He', '', 'o, wor', 'd!']
+
+# Conditionals and Booleans 
+# ==, <, >, <=, >=, !=
+
+my_name = "AJ"
+my_last_name = "Gebara"
+
+if name == "AJ" and my_last_name == "Brown":
+    print("Darkness")
+elif name == "Gebara" or my_last_name == "Kevin":
+    print("Darkness")
+else:
+    print("python is cool")
+    
+# Using a conditional in an interable object
+years = [2018, 2019, 2020, 2021]
+year = 2020
+
+if year in years:
+    print("%s is in the years collection" % year)
+
+# 2020 is in the years collection
+
+# not Operator
+print(not (1 == 1)) # False because 1 == 1 is True and then is inverted by not
+
+# While Loop
+
+count = 2
+while count < 7:
+    print(count)
+    count += 1
+    
+# break allows you to exit a loop
+count = 0
+while True:
+    print(count)
+    count += 1
+    if count >= 5:
+        break
+
+#continue allows you to skip the current block but not exit the loop entirely
+for x in range(8):
+    # if x is even, skip this block and do not print
+    if x % 2 == 0:
+        continue
+    print(x)
+    
+# List Comprehensions
+sentence = "Every moment is a fresh beginning."
+words = sentence.split()
+word_lengths = [len(word) for word in words]
+
+print(word_lengths)
+
+
+numbers = [1,2,3,4,5,6,7,8,9,10]
+even_numbers = [number for number in numbers if number % 2 == 0]
+
+print(even_numbers)
+
+# Functions and Encapsulation
+def example(input):
+    print(input)
+
+example("Straight outta Compton")
+
+def another_example(input1, input2):
+    print("I am %s %s" % (input1, input2))
+    
+another_example("AJ", "Gebara")
+
+#Classes
+class MyFirstClass:
+    variable = "data"
+    
+    def function(self):
+        return "Printing from a MyFirstClass object"
+    
+a_class_object = MyFirstClass()
+print(a_class_object.variable)
+
+class Animal:
+    name = "Kangaroo"
+    kind = "Marsupial"
+    color = "Pink"
+    
+    def description(self):
+        return "%s is a %s %s." % (self.name, self.color, self.kind)
+    
+animal_object = Animal()
+print(animal_object.name, animal_object.kind, animal_object.color)
+
+#Basic Dictionary Operations
+# Key/value pair
+# Essentially dictionary is to object as list is to array
+
+phonebook = {}
+phonebook["Ryan"] = 2345432
+phonebook["Mary"] = 9992234
+# or
+phonebook = {
+    "Ryan": 5678923,
+    "Mary": 2345678
+}
+
+#iterate through dictionary
+for name, number in phonebook.items():
+    print("Name: %s, Number: %s" % (name, number))
+
+# Name: Abe, Number: 4569874321
+# Name: Bill, Number: 7659803241
+# Name: Barry, Number: 6573214789
+
+#Remove item
+del phonebook["Ryan"]
+#or
+phonebook.pop("Mary")
+#pop returns the deleted value unlike del
+
+#Importing in Python
+#Any file that ends in .py is considered a module
+
+import math
+
+print(math.factorial(5))
+
+#Importing a specific file
+from math import factorial
+
+print(factorial(5))
+# 120
+
+#import all the names from a module
+from math import *
+
+print(factorial(5))
+# 120
+print(pow(2, 3))
+# 8.0
+
+#To find out which names a module defines when imported you can use the dir()
